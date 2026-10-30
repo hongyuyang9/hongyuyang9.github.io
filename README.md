@@ -1,4 +1,6 @@
-# Hongyu_Yang
+# Hongyu Yang
+
+🌐 **Website: <https://hongyuyang9.github.io/>**
 
 Hongyu Yang's personal page — a plain HTML/CSS/JS site served by GitHub Pages (no build step).
 
@@ -32,8 +34,7 @@ Hongyu Yang's personal page — a plain HTML/CSS/JS site served by GitHub Pages 
 
 1. Push this repo to GitHub.
 2. Repo **Settings → Pages → Build and deployment**: Source = *Deploy from a branch*, Branch = `main`, folder `/ (root)`.
-3. The site appears at `https://hongyuyang9.github.io/Hongyu_Yang/`.
-   For the shorter `https://hongyuyang9.github.io/`, rename the repo to `hongyuyang9.github.io`.
+3. The site appears at <https://hongyuyang9.github.io/>.
 
 ## Private visitor stats (GoatCounter)
 
