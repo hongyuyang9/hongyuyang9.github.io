@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hongyu Yang</title>
+  <meta name="description" content="Hongyu Yang — Ph.D. student in Computer Science. AI in Biomedicine, AI in Health, Multimodal Learning.">
+
+  <!-- Apply saved light/dark theme before first paint to avoid a flash -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      try {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        root.setAttribute('data-theme', dark ? 'dark' : 'light');
+      } catch (e) {
+        root.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="assets/img/avatar.svg">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#home">Hongyu Yang 杨弘宇</a>
+      <nav class="tabs" aria-label="Sections">
+        <a href="#home" data-tab="home">Home</a>
+        <a href="#publications" data-tab="publications">Publications</a>
+        <a href="#cv" data-tab="cv">CV</a>
+        <a href="#hobbies" data-tab="hobbies">Hobbies</a>
+      </nav>
+      <button class="icon-btn theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+        <i class="fa-solid fa-sun" aria-hidden="true"></i>
+      </button>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <!-- ===== Left sidebar (stays in place while the right side scrolls) ===== -->
+    <aside class="sidebar">
+      <!-- Replace assets/img/avatar.jpg with your own square photo -->
+      <img class="avatar" src="assets/img/avatar.jpg" alt="Photo of Hongyu Yang"
+           onerror="this.onerror=null;this.src='assets/img/avatar.svg'">
+      <h1 class="name">Hongyu Yang</h1>
+      <p class="role">Ph.D. Student, Computer Science</p>
+
+      <ul class="links">
+        <li><a href="mailto:hyang20@kent.edu"><i class="fa-solid fa-envelope" aria-hidden="true"></i><span>hyang20@kent.edu</span></a></li>
+        <!-- Replace with your Google Scholar profile URL -->
+        <li><a href="https://scholar.google.com/citations?user=VaCthAEAAAAJ&hl=en" target="_blank" rel="noopener"><i class="ai ai-google-scholar" aria-hidden="true"></i><span>Google Scholar</span></a></li>
+        <li><a href="https://github.com/hongyuyang9" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub</span></a></li>
+        <!-- Replace with your ORCID iD URL -->
+        <li><a href="https://orcid.org/my-orcid?orcid=0009-0001-2368-2855" target="_blank" rel="noopener"><i class="ai ai-orcid" aria-hidden="true"></i><span>ORCID</span></a></li>
+        <!-- Replace with your LinkedIn URL, or delete this line -->
+        <li><a href="https://www.linkedin.com/in/hongyuyang1999/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a></li>
+      </ul>
+    </aside>
+
+    <!-- ===== Right content ===== -->
+    <main class="content">
+
+      <!-- HOME -->
+      <section id="home" class="panel" aria-labelledby="home-h">
+        <h2 id="home-h">About Me</h2>
+        <p>
+          Hi! I'm Hongyu Yang, a Ph.D. student in Computer Science at Kent State University,
+          advised by <a href="https://yuzhiguo07.github.io/" target="_blank" rel="noopener">Dr. Yuzhi Guo</a>. Before that, I received my M.S. in
+          Data Science in Health from University of California, Los Angeles (UCLA), and my B.S. in Computer Science from Purdue University.
+        </p>
+        <p>
+          My current research focuses on AI for biomedicine, including gene perturbation prediction
+          and gene node prediction in KEGG pathways. Previously, I worked on AI for health,
+          forecasting continuous glucose monitoring (CGM) with time-series foundation models and
+          multimodal dietary context.
+        </p>
+
+        <h3>Research Interests</h3>
+        <ul class="tags">
+          <li>AI for Biomedicine</li>
+          <li>AI for Health</li>
+          <li>Multimodal Learning</li>
+        </ul>
+
+        <h3>News</h3>
+        <ul class="news">
+          <li><span class="date">2026</span> <span>Preprint <em>Evaluating Time-Series Foundation Models and Multimodal Dietary Context for CGM Forecasting</em> is on <a href="https://arxiv.org/abs/2609.11872" target="_blank" rel="noopener">arXiv</a>.</span></li>
+          <li><span class="date">Jun 2026</span> <span>Abstract on multimodal CGM forecasting was published in <em>Diabetes</em>.</span></li>
+        </ul>
+      </section>
+
+      <!-- PUBLICATIONS -->
+      <section id="publications" class="panel" aria-labelledby="pub-h" hidden>
+        <h2 id="pub-h">Publications</h2>
+        <p class="muted">See also my <a href="https://scholar.google.com/citations?user=VaCthAEAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a> profile.</p>
+
+        <h3>2026</h3>
+        <ol class="pubs">
+          <li class="pub">
+            <div class="pub-title">Evaluating Time-Series Foundation Models and Multimodal Dietary Context for CGM Forecasting</div>
+            <div class="pub-authors">Bowen Zhang*, Hsiu-Wen Cheng*, <b>Hongyu Yang*</b>, Evie L. Shen, Joleen Vansomphone, Yuna Li, Kerry Zhou, Zitian Qu, Suning Zhao, Xiangning Deng, Hua Zhou, Jin J. Zhou</div>
+            <div class="pub-venue"><em>arXiv preprint</em> arXiv:2609.11872, 2026 &middot; <span class="muted">* Equal contribution</span></div>
+            <div class="pub-links">
+              <a class="chip" href="https://arxiv.org/abs/2609.11872" target="_blank" rel="noopener">arXiv</a>
+              <a class="chip" href="https://arxiv.org/pdf/2609.11872" target="_blank" rel="noopener">PDF</a>
+              <button class="chip bib-toggle" type="button" aria-expanded="false">BibTeX</button>
+            </div>
+<pre class="bib" hidden>@article{zhang2026evaluating,
+  title   = {Evaluating Time-Series Foundation Models and Multimodal Dietary Context for CGM Forecasting},
+  author  = {Zhang, Bowen and Cheng, Hsiu-Wen and Yang, Hongyu and Shen, Evie L. and Vansomphone, Joleen and Li, Yuna and Zhou, Kerry and Qu, Zitian and Zhao, Suning and Deng, Xiangning and Zhou, Hua and Zhou, Jin J.},
+  journal = {arXiv preprint arXiv:2609.11872},
+  year    = {2026}
+}</pre>
+          </li>
+
+          <li class="pub">
+            <div class="pub-title">Multimodal CGM Forecasting: Fine-Tuned Foundation Models and Dietary Context Improve Postprandial Prediction</div>
+            <div class="pub-authors">Bowen Zhang, Kerry Zhou, Hsiu-Wen Cheng, <b>Hongyu Yang</b>, Jin Zhou, Hua Zhou</div>
+            <div class="pub-venue"><em>Diabetes</em> 75 (Supplement 1): 1935-P, 2026 &middot; Abstract</div>
+            <div class="pub-links">
+              <a class="chip" href="https://doi.org/10.2337/db26-1935-P" target="_blank" rel="noopener">DOI</a>
+              <button class="chip bib-toggle" type="button" aria-expanded="false">BibTeX</button>
+            </div>
+<pre class="bib" hidden>@article{zhang2026multimodal,
+  title   = {Multimodal CGM Forecasting: Fine-Tuned Foundation Models and Dietary Context Improve Postprandial Prediction},
+  author  = {Zhang, Bowen and Zhou, Kerry and Cheng, Hsiu-Wen and Yang, Hongyu and Zhou, Jin and Zhou, Hua},
+  journal = {Diabetes},
+  volume  = {75},
+  number  = {Supplement 1},
+  pages   = {1935-P},
+  year    = {2026},
+  doi     = {10.2337/db26-1935-P}
+}</pre>
+          </li>
+        </ol>
+      </section>
+
+      <!-- CV -->
+      <section id="cv" class="panel" aria-labelledby="cv-h" hidden>
+        <h2 id="cv-h">Curriculum Vitae</h2>
+
+        <h3>Education</h3>
+        <ul class="timeline">
+          <li>
+            <div class="tl-head"><strong>Ph.D. in Computer Science</strong><span class="date">2026 – present</span></div>
+            <div class="muted">Kent State University</div>
+          </li>
+          <li>
+            <div class="tl-head"><strong>M.S. in Data Science in Health</strong><span class="date">20X3 – 20X5</span></div>
+            <div class="muted">University of California, Los Angeles (UCLA)</div>
+          </li>
+          <li>
+            <div class="tl-head"><strong>B.S. in Computer Science</strong><span class="date">2022</span></div>
+            <div class="muted">Purdue University</div>
+          </li>
+        </ul>
+
+        <h3>Research Experience</h3>
+        <!-- Replace each advisor's href with their homepage URL -->
+        <ul class="timeline">
+          <li>
+            <div class="tl-head"><strong>Graduate Research Assistant</strong><span class="date">2026 – Present</span></div>
+            <div class="muted">Kent State University</div>
+            <div class="tl-desc">Advisors: <a href="https://yuzhiguo07.github.io/" target="_blank" rel="noopener">Dr. Yuzhi Guo</a></div>
+          </li>
+          <li>
+            <div class="tl-head"><strong>Research position</strong><span class="date">20XX – 20XX</span></div>
+            <div class="muted">University of California, Los Angeles (UCLA)</div>
+            <div class="tl-desc">Advisors: <a href="https://ph.ucla.edu/about/faculty-staff-directory/hua-zhou" target="_blank" rel="noopener">Dr. Hua Zhou</a> and <a href="https://ph.ucla.edu/about/faculty-staff-directory/jin-zhou" target="_blank" rel="noopener">Dr. Jin Zhou</a></div>
+          </li>
+        </ul>
+
+        <h3>Work Experience</h3>
+        <ul class="timeline">
+          <li>
+            <div class="tl-head"><strong>IT Support Student</strong><span class="date">Jul 2024 – Jun 2025</span></div>
+            <div class="muted">University of California, Los Angeles (UCLA) · Los Angeles, CA</div>
+          </li>
+          <li>
+            <div class="tl-head"><strong>AI Intern</strong><span class="date">Jun 2024 – Sep 2024</span></div>
+            <div class="muted">New York, NY</div>
+          </li>
+          <li>
+            <div class="tl-head"><strong>Software Engineer</strong><span class="date">2022 – 2023</span></div>
+            <div class="muted">Santa Clara, CA</div>
+          </li>
+        </ul>
+
+        <h3>Skills</h3>
+        <ul class="tags">
+          <li>Python</li>
+          <li>PyTorch</li>
+          <li>R</li>
+          <li>Java</li>
+          <li>C</li>
+          <li>JavaScript</li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>SQL</li>
+          <li>Assembly</li>
+          <li>LaTeX</li>
+        </ul>
+      </section>
+
+      <!-- HOBBIES -->
+      <section id="hobbies" class="panel" aria-labelledby="hob-h" hidden>
+        <h2 id="hob-h">Hobbies</h2>
+        <ul class="hobby-row">
+          <li class="hike"><i class="fa-solid fa-person-hiking" aria-hidden="true"></i>Hiking</li>
+          <li class="archery"><i class="fa-solid fa-bullseye" aria-hidden="true"></i>Archery</li>
+          <li class="nature"><i class="fa-solid fa-cloud-moon" aria-hidden="true"></i>Nature</li>
+          <li class="food"><i class="fa-solid fa-utensils" aria-hidden="true"></i>Food</li>
+        </ul>
+
+        <h3>Flowers</h3>
+        <!-- Add a photo: put it in assets/img/hobbies/ and copy one <figure> block (keep width/height = the image's pixel size) -->
+        <div class="gallery">
+          <figure class="photo">
+            <img src="assets/img/hobbies/pink-magnolia.jpg" width="960" height="1440" alt="Pink Magnolia (粉玉兰)" loading="lazy">
+            <figcaption>Pink Magnolia · <span lang="zh">粉玉兰</span></figcaption>
+          </figure>
+          <figure class="photo">
+            <img src="assets/img/hobbies/lotus-2.jpg" width="960" height="640" alt="Lotus (荷花)" loading="lazy">
+            <figcaption>Lotus · <span lang="zh">荷花</span></figcaption>
+          </figure>
+          <figure class="photo">
+            <img src="assets/img/hobbies/southern-magnolia.jpg" width="960" height="640" alt="Southern Magnolia (荷花玉兰)" loading="lazy">
+            <figcaption>Southern Magnolia · <span lang="zh">荷花玉兰</span></figcaption>
+          </figure>
+          <figure class="photo">
+            <img src="assets/img/hobbies/lotus-pond.jpg" width="960" height="643" alt="Lotus Pond (荷花池)" loading="lazy">
+            <figcaption>Lotus Pond · <span lang="zh">荷花池</span></figcaption>
+          </figure>
+          <figure class="photo">
+            <img src="assets/img/hobbies/jacaranda.jpg" width="960" height="726" alt="Jacaranda (蓝花楹)" loading="lazy">
+            <figcaption>Jacaranda · <span lang="zh">蓝花楹</span></figcaption>
+          </figure>
+          <figure class="photo">
+            <img src="assets/img/hobbies/rose-pierre-de-ronsard.jpg" width="960" height="640" alt="Pierre de Ronsard (龙沙宝石)" loading="lazy">
+            <figcaption>Pierre de Ronsard · <span lang="zh">龙沙宝石</span></figcaption>
+          </figure>
+          <figure class="photo">
+            <img src="assets/img/hobbies/hibiscus.jpg" width="960" height="720" alt="Hibiscus (扶桑花)" loading="lazy">
+            <figcaption>Hibiscus · <span lang="zh">扶桑花</span></figcaption>
+          </figure>
+          <figure class="photo">
+            <img src="assets/img/hobbies/jacaranda-2.jpg" width="960" height="683" alt="Jacaranda (蓝花楹)" loading="lazy">
+            <figcaption>Jacaranda · <span lang="zh">蓝花楹</span></figcaption>
+          </figure>
+          <figure class="photo">
+            <img src="assets/img/hobbies/rose-boscobel.jpg" width="960" height="791" alt="Boscobel (博斯科贝尔)" loading="lazy">
+            <figcaption>Boscobel · <span lang="zh">博斯科贝尔</span></figcaption>
+          </figure>
+          <figure class="photo">
+            <img src="assets/img/hobbies/pink-magnolia-2.jpg" width="960" height="774" alt="Pink Magnolia (粉玉兰)" loading="lazy">
+            <figcaption>Pink Magnolia · <span lang="zh">粉玉兰</span></figcaption>
+          </figure>
+          <figure class="photo">
+            <img src="assets/img/hobbies/peach-blossom.jpg" width="960" height="720" alt="Peach Blossom (桃花)" loading="lazy">
+            <figcaption>Peach Blossom · <span lang="zh">桃花</span></figcaption>
+          </figure>
+        </div>
+
+        <h3>What to Eat Today? <span lang="zh">今天吃什么？</span></h3>
+        <div class="food-picker">
+          <!-- Dishes: one <li> per dish -->
+          <ul class="food-list" lang="zh">
+            <li>香辣鸡脆骨</li>
+            <li>火锅</li>
+            <li>烤鸭</li>
+            <li>水煮鱼</li>
+            <li>小笼包</li>
+            <li>酸菜鱼</li>
+            <li>烧烤</li>
+            <li>干煸肥肠</li>
+            <li>毛血旺</li>
+            <li>软炸里脊</li>
+            <li>小酥肉</li>
+            <li>油焖大虾</li>
+            <li>糖醋排骨</li>
+            <li>红烧肉</li>
+            <li>东坡肉</li>
+            <li>醉蟹</li>
+            <li>鹅肝</li>
+            <li>皮皮虾</li>
+            <li>串串香</li>
+            <li>烤串</li>
+            <li>锅包肉</li>
+            <li>酱爆肉丁</li>
+            <li>芙蓉鸡片</li>
+            <li>蹄花</li>
+            <li>十三香小龙虾</li>
+            <li>肉夹馍</li>
+            <li>麦辣鸡翅</li>
+            <li>蛋挞</li>
+            <li>香芋派</li>
+            <li>烧鹅</li>
+            <li>烤羊排</li>
+            <li>日本豆腐</li>
+            <li>炸鲜奶</li>
+          </ul>
+          <div class="food-result" aria-live="polite"><span lang="zh">做选择太难了, 直接点一本吧!</span></div>
+          <button class="food-btn" type="button"><i class="fa-solid fa-utensils" aria-hidden="true"></i> <span lang="zh">今天吃什么？</span></button>
+        </div>
+
+        <details class="credits">
+          <summary>Photo credits</summary>
+          <ul>
+            <li>Pink Magnolia: <a href="https://commons.wikimedia.org/wiki/File:Saucer_Magnolias.jpg" target="_blank" rel="noopener">Iateabottle</a>, CC BY 4.0</li>
+            <li>Lotus: <a href="https://commons.wikimedia.org/wiki/File:Nelumno_nucifera_open_flower_-_botanic_garden_adelaide_edit3.jpg" target="_blank" rel="noopener">Peripitus</a>, CC BY-SA 4.0</li>
+            <li>Southern Magnolia: <a href="https://commons.wikimedia.org/wiki/File:-92_100_The_Great_Southern_Magnolia_Blossoms_(50703375711).jpg" target="_blank" rel="noopener">Carol VanHook</a>, CC BY-SA 2.0</li>
+            <li>Lotus Pond: <a href="https://commons.wikimedia.org/wiki/File:Large_pond_full_of_Lotus_Flower_blooms_(ac79d07d-1dd8-b71c-076a-8d716e5e7544).jpg" target="_blank" rel="noopener">NPS photo</a>, Public domain</li>
+            <li>Jacaranda: <a href="https://commons.wikimedia.org/wiki/File:Jacaranda_at_Dusk_01%2B_(262433892).jpg" target="_blank" rel="noopener">Sheba_Also 43,000 photos</a>, CC BY-SA 2.0</li>
+            <li>Pierre de Ronsard: <a href="https://commons.wikimedia.org/wiki/File:Rosa_%27Eden%27.jpg" target="_blank" rel="noopener">Captain-tucker</a>, CC BY-SA 3.0</li>
+            <li>Hibiscus: <a href="https://commons.wikimedia.org/wiki/File:Hibiscus_rosa-sinensis_21.jpg" target="_blank" rel="noopener">Vengolis</a>, CC BY-SA 3.0</li>
+            <li>Jacaranda: <a href="https://commons.wikimedia.org/wiki/File:Street_lined_with_Jacarandas,_Bryanston,_South_Africa.jpg" target="_blank" rel="noopener">Martie Swart from Johannesburg, South Africa</a>, CC BY 2.0</li>
+            <li>Boscobel: <a href="https://commons.wikimedia.org/wiki/File:Rosa_Boscobel_2022_1.jpg" target="_blank" rel="noopener">Geolina163</a>, CC BY-SA 4.0</li>
+            <li>Pink Magnolia: <a href="https://commons.wikimedia.org/wiki/File:Pink_Magnolia_(6876102996).jpg" target="_blank" rel="noopener">Tony Hisgett from Birmingham, UK</a>, CC BY 2.0</li>
+            <li>Peach Blossom: <a href="https://commons.wikimedia.org/wiki/File:Prunus_persica%EF%BC%88%E8%8A%B1%E6%A1%83%EF%BC%894035837.JPG" target="_blank" rel="noopener">松岡明芳</a>, CC BY-SA 3.0</li>
+          </ul>
+        </details>
+      </section>
+
+      <footer class="footer">
+        <span>&copy; <span class="year">2026</span> Hongyu Yang</span>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Like button (bottom-left) -->
+  <button class="like-btn" type="button" aria-pressed="false" aria-label="Like this page">
+    <i class="fa-regular fa-heart" aria-hidden="true"></i>
+    <span class="like-count">–</span>
+  </button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
