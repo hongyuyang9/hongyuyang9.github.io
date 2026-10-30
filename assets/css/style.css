@@ -53,7 +53,7 @@
 }
 :root[data-theme="dark"] { color-scheme: dark; }
 
-* { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: border-box; }
 
 html { scroll-padding-top: calc(var(--topbar-h) + 16px); }
 
@@ -168,10 +168,13 @@ p { margin: 0 0 1rem; }
 .sidebar {
   position: fixed;
   top: calc(var(--topbar-h) + 40px);
-  left: max(24px, calc((100vw - 1200px) / 2 + 24px));
-  width: var(--sidebar-w);
+  /* 8px side padding gives the link hover highlight room without overflowing */
+  left: max(16px, calc((100vw - 1200px) / 2 + 16px));
+  width: calc(var(--sidebar-w) + 16px);
+  padding: 0 8px;
   /* stop above the like button in the bottom-left corner */
   max-height: calc(100vh - var(--topbar-h) - 40px - 84px);
+  overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
   scrollbar-width: none;
@@ -495,6 +498,7 @@ p { margin: 0 0 1rem; }
   .sidebar {
     position: static;
     width: auto;
+    padding: 0;
     max-height: none;
     overflow: visible;
     padding-bottom: 0;
