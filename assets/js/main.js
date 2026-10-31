@@ -68,6 +68,16 @@ document.querySelector(".theme-toggle").addEventListener("click", () => {
 });
 
 /* ==========================================================
+   Home: copies of Education (CV tab) and Publications
+   Each <div data-copy="selector"> is replaced by copies of
+   the matching elements, so they are written only once.
+   ========================================================== */
+document.querySelectorAll("[data-copy]").forEach((slot) => {
+  const copies = [...document.querySelectorAll(slot.dataset.copy)].map((el) => el.cloneNode(true));
+  slot.replaceWith(...copies);
+});
+
+/* ==========================================================
    BibTeX toggles
    ========================================================== */
 document.querySelectorAll(".bib-toggle").forEach((btn) => {
