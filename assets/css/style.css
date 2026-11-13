@@ -12,8 +12,8 @@
   --border: #e1e7ef;
   --accent: #4c62d8;        /* main blue-violet */
   --accent-soft: #e9edfc;
-  /* sky blue → violet → soft pink top bar */
-  --bar-bg: linear-gradient(100deg, #c2e5f5 0%, #cbc4fb 55%, #e9c9ee 100%);
+  /* sky blue → violet top bar */
+  --bar-bg: linear-gradient(100deg, #c2e5f5 0%, #cbc4fb 100%);
   --bar-text: #22306a;
   --radius: 10px;
   /* hobby colors */
@@ -32,7 +32,7 @@
   --border: #29333f;
   --accent: #9eaef6;
   --accent-soft: #232a4b;
-  --bar-bg: linear-gradient(100deg, #1c2c58 0%, #2a2762 55%, #3c2654 100%);
+  --bar-bg: linear-gradient(100deg, #1c2c58 0%, #2a2762 100%);
   --bar-text: #dfe3fb;
   --hike: #6cc08a;
   --archery: #f0796c;
