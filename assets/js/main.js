@@ -92,6 +92,19 @@ document.querySelectorAll(".bib-toggle").forEach((btn) => {
    "What to eat today?" picker
    Dishes come from the <li> items in index.html.
    ========================================================== */
+function shuffle(arr) {
+  // Fisher-Yates: every order is equally likely
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+// Show the dishes in a new random order on every page load
+const foodList = document.querySelector(".food-list");
+if (foodList) foodList.append(...shuffle([...foodList.children]));
+
 const foodItems = [...document.querySelectorAll(".food-list li")];
 const foodResult = document.querySelector(".food-result");
 const foodBtn = document.querySelector(".food-btn");
@@ -101,7 +114,7 @@ let lastFood = -1;
 function nextFood() {
   // Go through every dish once in random order before repeating
   if (!foodQueue.length) {
-    foodQueue = foodItems.map((_, i) => i).sort(() => Math.random() - 0.5);
+    foodQueue = shuffle(foodItems.map((_, i) => i));
     if (foodQueue.length > 1 && foodQueue[0] === lastFood) foodQueue.push(foodQueue.shift());
   }
   lastFood = foodQueue.shift();
