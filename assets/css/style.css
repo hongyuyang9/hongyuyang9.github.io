@@ -16,11 +16,6 @@
   --bar-bg: linear-gradient(100deg, #c2e5f5 0%, #cbc4fb 100%);
   --bar-text: #22306a;
   --radius: 10px;
-  /* hobby colors */
-  --hike: #3e8c5a;          /* forest green */
-  --archery: #cf4b3f;       /* target red */
-  --nature: #3a86c8;        /* sky blue */
-  --food: #ef6f61;          /* soft coral */
   --peach: #ffe4d2;         /* "what to eat" picker: light peach */
   --peach-ink: #b5592a;
 }
@@ -34,10 +29,6 @@
   --accent-soft: #232a4b;
   --bar-bg: linear-gradient(100deg, #1c2c58 0%, #2a2762 100%);
   --bar-text: #dfe3fb;
-  --hike: #6cc08a;
-  --archery: #f0796c;
-  --nature: #72b2ea;
-  --food: #ff8e82;
   --peach: #4a3026;
   --peach-ink: #ffc8a6;
 }
@@ -55,7 +46,7 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-padding-top: calc(var(--topbar-h) + 16px); }
+html { scroll-padding-top: calc(var(--topbar-h) + 32px); }
 
 /* no rubber-band bounce at the top/bottom of the page */
 html, body { overscroll-behavior-y: none; }
@@ -90,8 +81,38 @@ p { margin: 0 0 1rem; }
   top: 0;
   z-index: 20;
   height: var(--topbar-h);
+  --bar-tail: 44px;   /* how far the fade reaches below the bar */
+}
+/* The bar has no hard bottom edge. Two layers sit behind its content:
+   ::before = page background (hides content scrolling underneath),
+   ::after  = the bar color, which starts fading halfway down the bar
+              and dissolves into the page below it. */
+.topbar::before,
+.topbar::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 calc(-1 * var(--bar-tail)) 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.topbar::before {
+  background: var(--bg);
+  -webkit-mask-image: linear-gradient(to bottom, #000 var(--topbar-h), rgb(0 0 0 / .6) calc(var(--topbar-h) + 12px), rgb(0 0 0 / .2) calc(var(--topbar-h) + 28px), transparent);
+  mask-image: linear-gradient(to bottom, #000 var(--topbar-h), rgb(0 0 0 / .6) calc(var(--topbar-h) + 12px), rgb(0 0 0 / .2) calc(var(--topbar-h) + 28px), transparent);
+}
+.topbar::after {
   background: var(--bar-bg);
-  border-bottom: 1px solid color-mix(in srgb, var(--bar-text) 15%, transparent);
+  --fade: linear-gradient(to bottom,
+    #000 30%,
+    rgb(0 0 0 / .92) 37%,
+    rgb(0 0 0 / .74) 47%,
+    rgb(0 0 0 / .5) 59%,
+    rgb(0 0 0 / .28) 72%,
+    rgb(0 0 0 / .12) 84%,
+    rgb(0 0 0 / .03) 94%,
+    transparent);
+  -webkit-mask-image: var(--fade);
+  mask-image: var(--fade);
 }
 .topbar-inner {
   max-width: 1200px;
@@ -350,44 +371,44 @@ p { margin: 0 0 1rem; }
 }
 .photo:hover figcaption { opacity: 1; }
 
-/* Hobbies: one row of hobby tiles */
+/* Hobbies: 2 x 2 landscape photo cards, label over the bottom of each photo */
 .hobby-row {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
 }
 .hobby-row li {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  padding: 20px 10px;
-  border: 1px solid var(--border);
+  position: relative;
+  aspect-ratio: 3 / 2;
   border-radius: var(--radius);
-  background: var(--surface);
+  overflow: hidden;
+  background: var(--accent-soft);
+  box-shadow: 0 2px 8px rgb(0 0 0 / .06);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.hobby-row li:hover { transform: translateY(-3px); box-shadow: 0 12px 26px rgb(0 0 0 / .16); }
+.hobby-row img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+.hobby-row li:hover img { transform: scale(1.05); }
+.hobby-row span {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 30px 10px 10px;
+  background: linear-gradient(transparent, rgb(0 0 0 / .62));
+  color: #fff;
   font-family: var(--font-head);
   font-weight: 600;
+  font-size: 1.1rem;
   text-align: center;
-  transition: transform .2s, box-shadow .2s;
 }
-.hobby-row li:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgb(0 0 0 / .08); }
-.hobby-row i {
-  width: 52px;
-  height: 52px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  color: var(--c);
-  background: color-mix(in srgb, var(--c) 14%, transparent);
-  font-size: 1.3rem;
-}
-.hobby-row .hike { --c: var(--hike); }
-.hobby-row .archery { --c: var(--archery); }
-.hobby-row .nature { --c: var(--nature); }
-.hobby-row .food { --c: var(--food); }
 
 .credits { margin-top: 28px; font-size: .8rem; color: var(--muted); }
 .credits summary { cursor: pointer; }
@@ -521,7 +542,6 @@ p { margin: 0 0 1rem; }
 
   .news li { grid-template-columns: 1fr; gap: 0; }
   .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .hobby-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .like-btn { left: 16px; bottom: 16px; }
 }
 
